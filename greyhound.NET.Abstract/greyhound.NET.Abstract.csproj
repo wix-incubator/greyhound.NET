@@ -1,16 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>greyhound.NET.Abstract</PackageId>
+		<Version>1.0.0</Version>
+		<authors>Bar Amsalem</authors>
+		<Company>Wix.com</Company>
+		<PackageVersion>1.0.0-alpha1.0</PackageVersion>
+		        <PackageTags>greyhound.NET.Abstract greyhound wix.com</PackageTags>
 
-  <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="Domain\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Domain\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\.editorconfig" />
-  </ItemGroup>
+		<Description>This package contain all of greyhound abstraction and metadata types</Description>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Domain\" />
+	</ItemGroup>
+	<ItemGroup>
+		<Folder Include="Domain\" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="..\.editorconfig" />
+	</ItemGroup>
 </Project>

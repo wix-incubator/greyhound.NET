@@ -5,10 +5,10 @@ using Grpc.Core;
 using Grpc.Net.Client;
 using Microsoft.Extensions.Logging;
 using greyhound.NET.Domain;
-using greyhound.NET.Converters;
+using greyhound.NET.SideCar.Converters;
 using System.Threading.Tasks;
 
-namespace greyhound.NET
+namespace greyhound.NET.SideCar
 {
 
     public class GreyhoundProducer : IGreyhoundProducer, IAsyncGreyhoundProducer, IDisposable
@@ -17,7 +17,7 @@ namespace greyhound.NET
         protected readonly proto.GreyhoundSidecar.GreyhoundSidecarClient client;
         protected bool disposed = false;
 
-        public GreyhoundProducer(string uri, ILoggerFactory logger): this(new Uri(uri), logger)
+        public GreyhoundProducer(string uri, ILoggerFactory logger) : this(new Uri(uri), logger)
         {
 
         }

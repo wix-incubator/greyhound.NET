@@ -4,7 +4,7 @@ using Google.Protobuf.Collections;
 using Domain = greyhound.NET.Domain;
 using Proto = Com.Wixpress.Dst.Greyhound.Sidecar.Api.V1;
 
-namespace greyhound.NET.Converters
+namespace greyhound.NET.SideCar.Converters
 {
     internal static class ProduceRequestConverters
     {

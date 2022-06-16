@@ -1,6 +1,6 @@
 ﻿using Proto = Com.Wixpress.Dst.Greyhound.Sidecar.Api.V1;
 
-namespace greyhound.NET.Converters
+namespace greyhound.NET.SideCar.Converters
 {
     internal static class ProduceResponseConverters
     {

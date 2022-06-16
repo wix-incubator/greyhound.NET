@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>greyhound.NET.SideCar</PackageId>
+		<Version>1.0.0</Version>
+		<authors>Bar Amsalem</authors>
+		<Company>Wix.com</Company>
+        <PackageTags>greyhound.NET.SideCar sidecar greyhound wix.com</PackageTags>
+		<PackageVersion>$(Version)</PackageVersion>
+        <Description>This is client for greyhound side car</Description>
+    </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.21.1" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.46.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+    <PackageReference Include="Grpc.Tools" Version="2.46.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\greyhound.NET.Abstract\greyhound.NET.Abstract.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
+    <Folder Include="Protos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Protos\greyhoundsidecar.proto" />
+  </ItemGroup>
+  <ItemGroup>
+    <Protobuf Include="Protos\greyhoundsidecar.proto" GrpcServices="Client">
+      <CompileOutputs>true</CompileOutputs>
+    </Protobuf>
+  </ItemGroup>
+</Project>

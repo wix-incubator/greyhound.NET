@@ -8,11 +8,11 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.40.0" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.46.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="..\greyhound.NET.API\protos\greyhoundsidecar.proto" GrpcServices="Server">
+    <Protobuf Include="..\greyhound.NET.SideCar\Protos\greyhoundsidecar.proto" GrpcServices="Server">
       <Link>Protos\greyhoundsidecar.proto</Link>
     </Protobuf>
   </ItemGroup>
