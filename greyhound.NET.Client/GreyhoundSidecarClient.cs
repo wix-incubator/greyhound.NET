@@ -85,9 +85,9 @@ namespace greyhound.NET.Client
             {
 				partitions = partitionsParsed;
             }
-			producer.CreateTopics(new CreateTopicsRequest(new TopicToCreate[]
+			producer.CreateTopics(new CreateTopicsRequest(new Topic[]
 			{
-				new TopicToCreate(name, partitions)
+				new Topic(name, partitions)
 			})) ;
 
 		}

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <LangVersion>9.0</LangVersion>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<PackageId>greyhound.NET.SideCar</PackageId>
@@ -9,7 +9,7 @@
 		<authors>Bar Amsalem</authors>
 		<Company>Wix.com</Company>
         <PackageTags>greyhound.NET.SideCar sidecar greyhound wix.com</PackageTags>
-		<PackageVersion>$(Version)</PackageVersion>
+		<PackageVersion>$(Version)-alpha1.0</PackageVersion>
         <Description>This is client for greyhound side car</Description>
     </PropertyGroup>
 
@@ -22,6 +22,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Grpc" Version="2.46.3" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\greyhound.NET.Abstract\greyhound.NET.Abstract.csproj" />
@@ -32,9 +33,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Protos\greyhoundsidecar.proto" />
+    <None Remove="Grpc.Net.Common" />
+    <None Remove="Grpc.AspNetCore.Server" />
+    <None Remove="Grpc" />
   </ItemGroup>
   <ItemGroup>
-    <Protobuf Include="Protos\greyhoundsidecar.proto" GrpcServices="Client">
+    <Protobuf Link="Protos\greyhoundsidecar.proto" Include="..\greyhound\greyhound-sidecar\greyhoundsidecar.proto" GrpcServices="Client">
+      <CompileOutputs>true</CompileOutputs>
+    </Protobuf>
+        <Protobuf Link="Protos\greyhoundsidecaruser.proto" Include="..\greyhound\greyhound-sidecar\greyhoundsidecaruser.proto" GrpcServices="Server">
       <CompileOutputs>true</CompileOutputs>
     </Protobuf>
   </ItemGroup>

@@ -11,25 +11,28 @@ using System.Threading.Tasks;
 namespace greyhound.NET.SideCar
 {
 
-    public class GreyhoundProducer : IGreyhoundProducer, IAsyncGreyhoundProducer, IDisposable
+
+
+
+    public class GreyhoundProducer : IProducer, IAsyncGreyhoundProducer
     {
         protected readonly GrpcChannel channel;
         protected readonly proto.GreyhoundSidecar.GreyhoundSidecarClient client;
         protected bool disposed = false;
 
-        public GreyhoundProducer(string uri, ILoggerFactory logger) : this(new Uri(uri), logger)
+        public GreyhoundProducer(string sidecarUri, ILoggerFactory logger) : this(new Uri(sidecarUri), logger)
         {
 
         }
 
-        public GreyhoundProducer(Uri uri, ILoggerFactory logger)
+        public GreyhoundProducer(Uri sidecarUri, ILoggerFactory logger)
         {
             var options = new GrpcChannelOptions
             {
                 DisposeHttpClient = true,
                 LoggerFactory = logger,
             };
-            channel = GrpcChannel.ForAddress(uri, options);
+            channel = GrpcChannel.ForAddress(sidecarUri, options);
             client = new proto.GreyhoundSidecar.GreyhoundSidecarClient(channel);
 
         }

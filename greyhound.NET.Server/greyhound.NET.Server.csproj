@@ -12,8 +12,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="..\greyhound.NET.SideCar\Protos\greyhoundsidecar.proto" GrpcServices="Server">
-      <Link>Protos\greyhoundsidecar.proto</Link>
+ <Protobuf Link="Protos\greyhoundsidecar.proto" Include="..\greyhound\greyhound-sidecar\greyhoundsidecar.proto" GrpcServices="Server">
+      <CompileOutputs>true</CompileOutputs>
     </Protobuf>
   </ItemGroup>
 </Project>

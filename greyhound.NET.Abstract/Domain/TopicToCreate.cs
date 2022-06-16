@@ -1,8 +1,10 @@
-﻿namespace greyhound.NET.Domain
+﻿using System.Collections.Generic;
+
+namespace greyhound.NET.Domain
 {
-    public class TopicToCreate
+    public class Topic
     {
-        public TopicToCreate(string name, int? partitions)
+        public Topic(string name, int? partitions)
         {
             Name = name;
             Partitions = partitions;
@@ -10,6 +12,26 @@
 
         public string Name { get; }
         public int? Partitions { get; }
+    }
+
+    
+
+    public class Record
+    {
+        public Record(int partition, int offset, string payload, IReadOnlyDictionary<string, string> headers, string key)
+        {
+            Partition = partition;
+            Offset = offset;
+            Payload = payload;
+            Headers = headers;
+            Key = key;
+        }
+
+        public int Partition { get; }
+        public int Offset { get; }
+        public string Payload { get; }
+        public IReadOnlyDictionary<string, string> Headers { get; }
+        public string Key { get; }
     }
 }
 

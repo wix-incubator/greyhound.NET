@@ -5,12 +5,12 @@ namespace greyhound.NET.Domain
 {
     public class CreateTopicsRequest
     {
-        public CreateTopicsRequest(IEnumerable<TopicToCreate> topics)
+        public CreateTopicsRequest(IEnumerable<Topic> topics)
         {
             Topics = topics.ToList();
         }
 
-        public IReadOnlyList<TopicToCreate> Topics { get; }
+        public IReadOnlyList<Topic> Topics { get; }
     }
 }
 
