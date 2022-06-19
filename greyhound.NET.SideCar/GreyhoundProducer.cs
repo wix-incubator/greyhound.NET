@@ -40,27 +40,27 @@ namespace greyhound.NET.SideCar
         public ProduceResponse Produce(ProduceRequest request)
         {
             CheckDisposed();
-            return client.Produce(request.AsProto()).AsDomin();
+            return client.Produce(request.AsProto()).AsDomain();
         }
 
         public CreateTopicsResponse CreateTopics(CreateTopicsRequest request)
         {
             CheckDisposed();
-            return client.CreateTopics(request.AsProto()).AsDomin();
+            return client.CreateTopics(request.AsProto()).AsDomain();
         }
 
         public async Task<CreateTopicsResponse> CreateTopicsAsync(CreateTopicsRequest request)
         {
             CheckDisposed();
             var response = await client.CreateTopicsAsync(request.AsProto());
-            return response.AsDomin();
+            return response.AsDomain();
         }
 
         public async Task<ProduceResponse> ProduceAsync(ProduceRequest request)
         {
             CheckDisposed();
             var response = await client.ProduceAsync(request.AsProto());
-            return response.AsDomin();
+            return response.AsDomain();
         }
 
         #region Dispose

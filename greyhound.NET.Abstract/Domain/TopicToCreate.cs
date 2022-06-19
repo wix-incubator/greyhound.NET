@@ -18,7 +18,7 @@ namespace greyhound.NET.Domain
 
     public class Record
     {
-        public Record(int partition, int offset, string payload, IReadOnlyDictionary<string, string> headers, string key)
+        public Record(int partition, long offset, string payload, IReadOnlyDictionary<string, string> headers, string key)
         {
             Partition = partition;
             Offset = offset;
@@ -28,7 +28,7 @@ namespace greyhound.NET.Domain
         }
 
         public int Partition { get; }
-        public int Offset { get; }
+        public long Offset { get; }
         public string Payload { get; }
         public IReadOnlyDictionary<string, string> Headers { get; }
         public string Key { get; }

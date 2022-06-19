@@ -8,7 +8,7 @@ namespace greyhound.NET.SideCar.Converters
 {
     internal static class ProduceRequestConverters
     {
-        public static Domain.ProduceRequest AsDomin(this Proto.ProduceRequest request)
+        public static Domain.ProduceRequest AsDomain(this Proto.ProduceRequest request)
         {
             return new Domain.ProduceRequest(
                 topic: request.Topic,
