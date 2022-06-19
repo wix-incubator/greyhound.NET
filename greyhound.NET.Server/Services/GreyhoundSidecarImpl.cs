@@ -82,7 +82,7 @@ public class GreyhoundSidecarImpl : GreyhoundSidecar.GreyhoundSidecarBase
 
         logger?.LogInformation("processing request for register with host = `{host}` and port = `{port}`", request.Host, request.Port);
 
-        var sidecarUri = new Uri($"{request.Host}:{request.Port}");
+        var sidecarUri = new Uri($"http://{request.Host}:{request.Port}");
         var channel = GrpcChannel.ForAddress(sidecarUri, options);
         await channel.ConnectAsync();
         sideCarClient = new GreyhoundSidecarUser.GreyhoundSidecarUserClient(channel);

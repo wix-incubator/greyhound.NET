@@ -37,7 +37,8 @@ namespace greyhound.NET.SideCar.Consumer
             }
             catch (Exception ex)
             {
-                context.Status = new Status(StatusCode.Internal, "Failed to handle greyhound record", ex);
+                Console.WriteLine(ex.Message);
+                context.Status = new Status(StatusCode.PermissionDenied, "Failed to handle greyhound record", ex);
             }
             return new HandleMessagesResponse();
 

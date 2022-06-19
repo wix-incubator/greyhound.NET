@@ -80,7 +80,8 @@ namespace greyhound.NET.SideCar.Consumer
             
             builder.WebHost.ConfigureKestrel(options =>
             {
-                options.Listen(ip, LocalUri.Port, o => o.Protocols = HttpProtocols.Http2);
+                //options.Listen(ip, LocalUri.Port, o => o.Protocols = HttpProtocols.Http2);
+                options.ListenLocalhost(LocalUri.Port, o => o.Protocols = HttpProtocols.Http2);
             });
 
             builder.Services.AddGrpc();
@@ -105,7 +106,7 @@ namespace greyhound.NET.SideCar.Consumer
            using var channel = GrpcChannel.ForAddress(sidecarUri, options);
            var client = new proto.GreyhoundSidecar.GreyhoundSidecarClient(channel);
 
-            client.Register(new proto.RegisterRequest { Host = "http://" + LocalUri.Host, Port = LocalUri.Port.ToString() });
+            client.Register(new proto.RegisterRequest { Host =  LocalUri.Host, Port = LocalUri.Port.ToString() });
 
             var protoConsumers = consumers
                 .SelectMany(item => item.Value.Topics
