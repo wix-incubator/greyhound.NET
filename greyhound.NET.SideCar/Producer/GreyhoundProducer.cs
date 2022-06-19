@@ -1,20 +1,14 @@
 ﻿using System;
-using System.Net;
 using proto = Com.Wixpress.Dst.Greyhound.Sidecar.Api.V1;
-using Grpc.Core;
 using Grpc.Net.Client;
 using Microsoft.Extensions.Logging;
 using greyhound.NET.Domain;
 using greyhound.NET.SideCar.Converters;
 using System.Threading.Tasks;
 
-namespace greyhound.NET.SideCar
+namespace greyhound.NET.SideCar.Producer
 {
-
-
-
-
-    public class GreyhoundProducer : IProducer, IAsyncGreyhoundProducer
+    public class GreyhoundProducer : IProducer, IAsyncProducer
     {
         protected readonly GrpcChannel channel;
         protected readonly proto.GreyhoundSidecar.GreyhoundSidecarClient client;

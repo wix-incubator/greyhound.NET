@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Proto = Com.Wixpress.Dst.Greyhound.Sidecar.Api;
+using Proto = Com.Wixpress.Dst.Greyhound.Sidecar.Api.V1;
 
 namespace greyhound.NET.SideCar.Converters
 {

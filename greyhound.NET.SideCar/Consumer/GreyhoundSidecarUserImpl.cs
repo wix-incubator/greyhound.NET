@@ -1,17 +1,26 @@
 ﻿using System;
-using Com.Wixpress.Dst.Greyhound.Sidecar.Api;
+using Com.Wixpress.Dst.Greyhound.Sidecar.Api.V1;
 using System.Threading.Tasks;
 using Grpc.Core;
 using System.Collections.Generic;
 using greyhound.NET.SideCar.Converters;
 
-namespace greyhound.NET.SideCar
+namespace greyhound.NET.SideCar.Consumer
 {
     public class GreyhoundSidecarUserImpl : GreyhoundSidecarUser.GreyhoundSidecarUserBase
     {
-        public GreyhoundSidecarUserImpl(IReadOnlyDictionary<string, ConsumerGroup> groups)
+        public class SidecarGroups
         {
-            Groups = groups ?? new Dictionary<string, ConsumerGroup>();
+            public SidecarGroups(IReadOnlyDictionary<string, ConsumerGroup> groups)
+            {
+                Groups = groups;
+            }
+
+            public IReadOnlyDictionary<string, ConsumerGroup> Groups { get; }
+        }
+        public GreyhoundSidecarUserImpl(SidecarGroups groups)
+        {
+            Groups = groups?.Groups ?? new Dictionary<string, ConsumerGroup>();
         }
 
         public IReadOnlyDictionary<string, ConsumerGroup> Groups { get; }

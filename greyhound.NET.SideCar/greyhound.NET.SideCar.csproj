@@ -22,7 +22,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Grpc" Version="2.46.3" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.46.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\greyhound.NET.Abstract\greyhound.NET.Abstract.csproj" />
@@ -30,12 +30,17 @@
   <ItemGroup>
     <Folder Include="Converters\" />
     <Folder Include="Protos\" />
+    <Folder Include="Producer\" />
+    <Folder Include="Consumer\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Protos\greyhoundsidecar.proto" />
     <None Remove="Grpc.Net.Common" />
     <None Remove="Grpc.AspNetCore.Server" />
     <None Remove="Grpc" />
+    <None Remove="Grpc.AspNetCore" />
+    <None Remove="Producer\" />
+    <None Remove="Consumer\" />
   </ItemGroup>
   <ItemGroup>
     <Protobuf Link="Protos\greyhoundsidecar.proto" Include="..\greyhound\greyhound-sidecar\greyhoundsidecar.proto" GrpcServices="Client">

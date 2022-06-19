@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace greyhound.NET.SideCar
+namespace greyhound.NET.SideCar.Consumer
 {
     public sealed class ConsumerGroup
     {

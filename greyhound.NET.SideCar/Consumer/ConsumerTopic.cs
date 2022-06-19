@@ -1,7 +1,7 @@
 ﻿using System;
 using Com.Wixpress.Dst.Greyhound.Sidecar.Api;
 
-namespace greyhound.NET.SideCar
+namespace greyhound.NET.SideCar.Consumer
 {
     public sealed class ConsumerTopic
     {

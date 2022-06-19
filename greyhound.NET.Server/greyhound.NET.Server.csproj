@@ -1,19 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
-
-
-  <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.46.0" />
-  </ItemGroup>
-
-  <ItemGroup>
- <Protobuf Link="Protos\greyhoundsidecar.proto" Include="..\greyhound\greyhound-sidecar\greyhoundsidecar.proto" GrpcServices="Server">
-      <CompileOutputs>true</CompileOutputs>
-    </Protobuf>
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Grpc.AspNetCore" Version="2.46.0" />
+		<PackageReference Include="Grpc.Net.Client" Version="2.46.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<Protobuf Link="Protos\greyhoundsidecar.proto" Include="..\greyhound\greyhound-sidecar\greyhoundsidecar.proto" GrpcServices="Server">
+			<CompileOutputs>true</CompileOutputs>
+		</Protobuf>
+		<Protobuf Link="Protos\greyhoundsidecaruser.proto" Include="..\greyhound\greyhound-sidecar\greyhoundsidecaruser.proto" GrpcServices="Client">
+			<CompileOutputs>true</CompileOutputs>
+		</Protobuf>
+	</ItemGroup>
+	<ItemGroup>
+	  <None Remove="Grpc.Net.Client" />
+	</ItemGroup>
 </Project>

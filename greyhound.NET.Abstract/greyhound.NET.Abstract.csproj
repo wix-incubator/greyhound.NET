@@ -14,11 +14,13 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<None Remove="Domain\" />
+		<None Remove="..\.editorconfig" />
+		<None Remove="Consumer\" />
+		<None Remove="Producer\" />
 	</ItemGroup>
 	<ItemGroup>
 		<Folder Include="Domain\" />
-	</ItemGroup>
-	<ItemGroup>
-		<None Include="..\.editorconfig" />
+		<Folder Include="Consumer\" />
+		<Folder Include="Producer\" />
 	</ItemGroup>
 </Project>

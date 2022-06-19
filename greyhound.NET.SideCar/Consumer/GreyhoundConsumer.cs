@@ -1,20 +1,21 @@
 ﻿using System;
+using System.Threading.Tasks;
 using Grpc.Core;
 
-namespace greyhound.NET.SideCar
+namespace greyhound.NET.SideCar.Consumer
 {
     public class GreyhoundConsumer : IConsumer
     {
-        public GreyhoundConsumer(Server server)
+        public GreyhoundConsumer(Task server)
         {
             Server = server;
         }
 
-        public Server Server { get; }
+        public Task Server { get; }
 
         public void Dispose()
         {
-            Server.ShutdownAsync().Wait();
+            Server.Wait();
         }
     }
 
