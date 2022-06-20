@@ -1,0 +1,61 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1700.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "greyhound.NET.Abstract", "greyhound.NET.Abstract\greyhound.NET.Abstract.csproj", "{F4947B08-0B7F-4009-AE39-BA3DCF051615}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6E10D6A5-4408-4704-A24F-B5DCAC407AFE}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "greyhound.NET.Server", "greyhound.NET.Server\greyhound.NET.Server.csproj", "{3557FCAC-48B6-45C1-859B-8F767ED788C4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{23463A99-6933-4B35-8C18-38E4DF611D31}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{85A8999E-2566-4C0A-AA0E-1F82F3B4F0F3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{4BF81D45-6F28-4BEE-98EF-8B876CFD6244}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "greyhound.NET.SideCar", "greyhound.NET.SideCar\greyhound.NET.SideCar.csproj", "{48C52912-29EA-4EA9-AEFB-F86C60F4255D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "greyhound.NET.Client", "greyhound.NET.Client\greyhound.NET.Client.csproj", "{17A76033-A707-4218-AE31-1E725CEAB19C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F4947B08-0B7F-4009-AE39-BA3DCF051615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4947B08-0B7F-4009-AE39-BA3DCF051615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4947B08-0B7F-4009-AE39-BA3DCF051615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4947B08-0B7F-4009-AE39-BA3DCF051615}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3557FCAC-48B6-45C1-859B-8F767ED788C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3557FCAC-48B6-45C1-859B-8F767ED788C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3557FCAC-48B6-45C1-859B-8F767ED788C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3557FCAC-48B6-45C1-859B-8F767ED788C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48C52912-29EA-4EA9-AEFB-F86C60F4255D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48C52912-29EA-4EA9-AEFB-F86C60F4255D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48C52912-29EA-4EA9-AEFB-F86C60F4255D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48C52912-29EA-4EA9-AEFB-F86C60F4255D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17A76033-A707-4218-AE31-1E725CEAB19C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17A76033-A707-4218-AE31-1E725CEAB19C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17A76033-A707-4218-AE31-1E725CEAB19C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17A76033-A707-4218-AE31-1E725CEAB19C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D358DF67-BCF3-41CD-8FCC-1787F413BC0B}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3557FCAC-48B6-45C1-859B-8F767ED788C4} = {23463A99-6933-4B35-8C18-38E4DF611D31}
+		{F4947B08-0B7F-4009-AE39-BA3DCF051615} = {85A8999E-2566-4C0A-AA0E-1F82F3B4F0F3}
+		{48C52912-29EA-4EA9-AEFB-F86C60F4255D} = {85A8999E-2566-4C0A-AA0E-1F82F3B4F0F3}
+		{17A76033-A707-4218-AE31-1E725CEAB19C} = {4BF81D45-6F28-4BEE-98EF-8B876CFD6244}
+	EndGlobalSection
+EndGlobal

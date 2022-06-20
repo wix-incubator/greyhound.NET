@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+		<PackageId>greyhound.NET.SideCar</PackageId>
+		<Version>1.0.0</Version>
+		<authors>Bar Amsalem</authors>
+		<Company>Wix.com</Company>
+        <PackageTags>greyhound.NET.SideCar sidecar greyhound wix.com</PackageTags>
+		<PackageVersion>$(Version)-alpha1.0</PackageVersion>
+        <Description>This is client for greyhound side car</Description>
+    </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.21.1" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.46.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.1" />
+    <PackageReference Include="Grpc.Tools" Version="2.46.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.46.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\greyhound.NET.Abstract\greyhound.NET.Abstract.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
+    <Folder Include="Protos\" />
+    <Folder Include="Producer\" />
+    <Folder Include="Consumer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Protos\greyhoundsidecar.proto" />
+    <None Remove="Grpc.Net.Common" />
+    <None Remove="Grpc.AspNetCore.Server" />
+    <None Remove="Grpc" />
+    <None Remove="Grpc.AspNetCore" />
+    <None Remove="Producer\" />
+    <None Remove="Consumer\" />
+  </ItemGroup>
+  <ItemGroup>
+
+    <Protobuf Link="Protos\greyhoundsidecar.proto" Include="..\greyhound\greyhoundsidecar\src\main\protobuf\com\wixpress\dst\greyhound\sidecar\api\v1\greyhoundsidecar.proto" GrpcServices="Client">
+      <CompileOutputs>true</CompileOutputs>
+    </Protobuf>
+        <Protobuf Link="Protos\greyhoundsidecaruser.proto" Include="..\greyhound\greyhoundsidecar\src\main\protobuf\com\wixpress\dst\greyhound\sidecar\api\v1\greyhoundsidecaruser.proto" GrpcServices="Server">
+      <CompileOutputs>true</CompileOutputs>
+    </Protobuf>
+  </ItemGroup>
+</Project>

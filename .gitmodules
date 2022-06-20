@@ -1,0 +1,4 @@
+[submodule "greyhound"]
+	path = greyhound
+	url = git@github.com:wix/greyhound.git
+	branch = master
