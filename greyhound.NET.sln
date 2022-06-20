@@ -8,6 +8,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6E10D6A5-4408-4704-A24F-B5DCAC407AFE}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "greyhound.NET.Server", "greyhound.NET.Server\greyhound.NET.Server.csproj", "{3557FCAC-48B6-45C1-859B-8F767ED788C4}"

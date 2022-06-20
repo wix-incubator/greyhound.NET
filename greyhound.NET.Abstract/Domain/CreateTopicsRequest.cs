@@ -10,6 +10,11 @@ namespace greyhound.NET.Domain
             Topics = topics.ToList();
         }
 
+        public CreateTopicsRequest(params Topic[] topics)
+        {
+            Topics = topics.ToList();
+        }
+
         public IReadOnlyList<Topic> Topics { get; }
     }
 }

@@ -43,10 +43,11 @@
     <None Remove="Consumer\" />
   </ItemGroup>
   <ItemGroup>
-    <Protobuf Link="Protos\greyhoundsidecar.proto" Include="..\greyhound\greyhound-sidecar\greyhoundsidecar.proto" GrpcServices="Client">
+
+    <Protobuf Link="Protos\greyhoundsidecar.proto" Include="..\greyhound\greyhoundsidecar\src\main\protobuf\com\wixpress\dst\greyhound\sidecar\api\v1\greyhoundsidecar.proto" GrpcServices="Client">
       <CompileOutputs>true</CompileOutputs>
     </Protobuf>
-        <Protobuf Link="Protos\greyhoundsidecaruser.proto" Include="..\greyhound\greyhound-sidecar\greyhoundsidecaruser.proto" GrpcServices="Server">
+        <Protobuf Link="Protos\greyhoundsidecaruser.proto" Include="..\greyhound\greyhoundsidecar\src\main\protobuf\com\wixpress\dst\greyhound\sidecar\api\v1\greyhoundsidecaruser.proto" GrpcServices="Server">
       <CompileOutputs>true</CompileOutputs>
     </Protobuf>
   </ItemGroup>

@@ -14,7 +14,7 @@ namespace greyhound.NET.Client
             "App usage: Command [<options>]\n" +
             "coomands:\n" +
             "create <topic-name> <topic partition>\n" +
-            "produce <topic-name> <key> [<payload>]";
+            "produce <topic-name> [<payload>] [<key>]";
 
         static readonly IReadOnlyDictionary<string, string> emptyHeaders = new Dictionary<string, string>();
 
@@ -60,8 +60,8 @@ namespace greyhound.NET.Client
         private static string HandleProduce(Greyhound gh, string[] args)
         {
             var topic = args[0];
-            var key = args.Length > 1 ? args[1]  : null;
-            var payload = args.Length > 2 ? args[2] : null;
+            var payload = args.Length > 1 ? args[1] : null;
+            var key = args.Length > 2 ? args[2]  : null;
             gh.Produce(new ProduceRequest(topic, payload, key, emptyHeaders));
             return $"done producing `{topic}`";
         }
@@ -69,7 +69,7 @@ namespace greyhound.NET.Client
         static void HandleTopic(string topic, Record r)
         {
             loggerFactory.CreateLogger<Greyhound>()
-                .LogInformation("handling topic `{topic}` with key=`{key}, Payload=`{Payload}` ", topic, r.Key, r.Payload);
+                .LogInformation("handling topic `{topic}` with key=`{key}` Payload=`{Payload}` ", topic, r.Key, r.Payload);
         }
 
     }
